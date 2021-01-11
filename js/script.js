@@ -7,9 +7,9 @@ Btn.addEventListener('click', () => {
     if (!url.value) {
         alert('Enter YouTube URL');
     } else {
-        if (select.value === 'mp3') {
+        if (document.getElementById("mp3").value === 'mp3') {
             downloadMp3(url.value);
-        } else if (select.value === 'mp4') {
+        } else if (document.getElementById("mp4").value === 'mp4') {
             downloadMp4(url.value);
         }
     }
