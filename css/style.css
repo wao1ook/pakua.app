@@ -605,35 +605,21 @@ nav .mention a {
     letter-spacing: 1px;
 }
 
-input[type="radio"] {
-    display: none;
-}
-
-input[type="radio"] + label span {
-    display: none;
-}
-
-input[type="radio"] + label {
+select{
     color: rgba(255, 255, 255, 0.35);
+    margin-right: 20px;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+    padding: 10px 20px;
     border-radius: 1000px;
+    background-color: transparent;
     transition: 0.4s background-color ease, 0.4s color ease, 0.4s opacity ease;
 }
 
-input[type="radio"]:checked + label {
-    background-color: white;
-    color: var(--red);
-    box-shadow: 3px 3px 15px rgba(12, 16, 20, 0.20);
-}
-
-input[type="radio"] + label.downloading {
-    opacity: 0.2;
-}
-
-input[type="radio"] + label:hover {
-    background-color: #21212D;
+select option{
+    background-color: var(--mainColor);
+    color: grey;
 }
 
 #mp4Lbl {
