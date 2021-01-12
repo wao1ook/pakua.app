@@ -656,8 +656,12 @@ input[type="radio"] + label:hover {
 
 .url {
     padding: 15px;
-    margin-bottom: 50px;
     width: 50%;
+    color: darkgrey;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    text-align: center;
     border: none !important;
     background-color: transparent !important;
     border-bottom: 2px solid var(--red) !important;
@@ -666,8 +670,7 @@ input[type="radio"] + label:hover {
 
 [placeholder]:focus::-webkit-input-placeholder {
     transition: text-indent 0.4s 0.4s ease;
-    text-indent: -100%;
-    opacity: 1;
+    opacity: 0;
 }
 
 ::placeholder {
