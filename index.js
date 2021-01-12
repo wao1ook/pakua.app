@@ -26,7 +26,9 @@ app.get('/downloadmp3', async (req, res, next) => {
         if (!ytdl.validateURL(url)) {
             return res.sendStatus(400);
         }
-        let title = 'audio';
+
+        let info = await ytdl.getInfo(url);
+        let title = info.videoDetails.title;
 
         await ytdl.getBasicInfo(url, {
             format: 'mp4'
@@ -58,7 +60,9 @@ app.get('/downloadmp4', async (req, res, next) => {
         if (!ytdl.validateURL(url)) {
             return res.sendStatus(400);
         }
-        let title = 'video';
+
+        let info = await ytdl.getInfo(url);
+        let title = info.videoDetails.title;
 
         await ytdl.getBasicInfo(url, {
             format: 'mp4'
