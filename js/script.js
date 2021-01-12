@@ -22,9 +22,9 @@ Btn.addEventListener('click', () => {
             title: 'Please enter Youtube video url'
         });
     } else {
-        if (document.getElementById("mp3").value === 'mp3') {
+        if (select.value === 'mp3') {
             downloadMp3(url.value);
-        } else if (document.getElementById("mp4").value === 'mp4') {
+        } else if (select.value === 'mp4') {
             downloadMp4(url.value);
         }
     }
