@@ -22,7 +22,7 @@ app.listen(PORT, () => {
 
 app.get('/downloadmp3', async (req, res, next) => {
     try {
-        var url = req.query.url;
+        const url = req.query.url;
         if (!ytdl.validateURL(url)) {
             return res.sendStatus(400);
         }
@@ -41,6 +41,7 @@ app.get('/downloadmp3', async (req, res, next) => {
         ytdl(url, {
             format: 'mp3',
             filter: 'audioonly',
+            quality: 'highestaudio'
         }).pipe(res);
 
         con.getConnection(function (err, connection) {
@@ -73,6 +74,8 @@ app.get('/downloadmp4', async (req, res, next) => {
         res.header('Content-Disposition', `attachment; filename="${title}.mp4"`);
         ytdl(url, {
             format: 'mp4',
+            quality: 'highestvideo',
+            filter: 'videoandaudio',
         }).pipe(res);
 
         con.getConnection(function (err, connection) {
