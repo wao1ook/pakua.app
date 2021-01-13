@@ -1,7 +1,31 @@
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+let select = document.querySelector('.format');
 let Btn = document.getElementById('btn');
 let url = document.querySelector('.url');
-let select = document.querySelector('.format');
 let serverURL = 'http://localhost:3000';
+
+const toggleSwitch = document.querySelector(".theme-selector");
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'light') {
+        toggleSwitch.checked = true;
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
 
 const Toast = Swal.mixin({
     toast: true,
