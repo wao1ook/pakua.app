@@ -1,7 +1,12 @@
+const btn = document.querySelector(".theme-selector");
+let select = document.querySelector('.format');
 let Btn = document.getElementById('btn');
 let url = document.querySelector('.url');
-let select = document.querySelector('.format');
 let serverURL = 'http://localhost:3000';
+
+btn.addEventListener("click", function () {
+    document.body.classList.toggle("light-theme");
+});
 
 const Toast = Swal.mixin({
     toast: true,
