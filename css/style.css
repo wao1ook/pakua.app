@@ -765,11 +765,19 @@ input:checked + .slider:before {
 
 @media only screen and (max-width: 500px) {
     h1 {
-        padding: 0 20px;
+        padding: 0 20px !important;
         font-size: 35px !important;
     }
 
     .prem {
-        display: none;
+        display: none !important;
+    }
+
+    .url{
+        width: 70% !important;
+    }
+
+    .download-button{
+        margin-bottom: 0 !important;
     }
 }
