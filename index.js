@@ -1,17 +1,17 @@
 const express = require('express');
 const ytdl = require('ytdl-core');
-const mysql = require('mysql');
+// const mysql = require('mysql');
 const cors = require('cors');
 const app = express();
 
 const PORT = 3000;
-
-const con = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'emanate_pakua'
-});
+//
+// const con = mysql.createPool({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'emanate_pakua'
+// });
 
 
 app.use(cors());
@@ -44,11 +44,11 @@ app.get('/downloadmp3', async (req, res, next) => {
             quality: 'highestaudio'
         }).pipe(res);
 
-        con.getConnection(function (err, connection) {
-            connection.query('UPDATE downloads SET counts = counts + 1 ', function (err, rows) {
-                connection.release();
-            });
-        });
+        // con.getConnection(function (err, connection) {
+        //     connection.query('UPDATE downloads SET counts = counts + 1 ', function (err, rows) {
+        //         connection.release();
+        //     });
+        // });
 
     } catch (err) {
         console.error(err);
@@ -78,11 +78,11 @@ app.get('/downloadmp4', async (req, res, next) => {
             filter: 'videoandaudio',
         }).pipe(res);
 
-        con.getConnection(function (err, connection) {
-            connection.query('UPDATE downloads SET counts = counts + 1 ', function (err, rows) {
-                connection.release();
-            });
-        });
+        // con.getConnection(function (err, connection) {
+        //     connection.query('UPDATE downloads SET counts = counts + 1 ', function (err, rows) {
+        //         connection.release();
+        //     });
+        // });
 
     } catch (err) {
         console.error(err);
