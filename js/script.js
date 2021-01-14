@@ -1,10 +1,20 @@
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-let select = document.querySelector('.format');
-let Btn = document.getElementById('btn');
-let url = document.querySelector('.url');
-let serverURL = 'http://localhost:3000';
-
 const toggleSwitch = document.querySelector(".theme-selector");
+const select = document.querySelector('.format');
+const Btn = document.getElementById('btn');
+const url = document.querySelector('.url');
+const serverURL = 'http://localhost:3000';
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
 
 function switchTheme(e) {
     if (e.target.checked) {
@@ -26,17 +36,6 @@ if (currentTheme) {
 
 toggleSwitch.addEventListener('change', switchTheme, false);
 
-const Toast = Swal.mixin({
-    toast: true,
-    position: 'top',
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-})
 
 Btn.addEventListener('click', () => {
     if (!url.value) {

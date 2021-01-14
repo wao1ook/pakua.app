@@ -15,7 +15,8 @@
     "express": "^4.16.4",
     "mysql": "^2.18.1",
     "sweetalert2": "^10.13.0",
-    "ytdl-core": "^4.4.3"
+    "ytdl-core": "^4.4.3",
+    "ytpl": "^2.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
