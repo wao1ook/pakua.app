@@ -763,6 +763,17 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+.bmc-btn {
+    min-width: 0 !important;
+    height: 40px !important;
+    padding: 0 15px !important;
+}
+
+.bmc-btn-text {
+    letter-spacing: 1px;
+    color: white !important;
+}
+
 @media only screen and (max-width: 500px) {
     h1 {
         padding: 0 20px !important;
@@ -773,11 +784,15 @@ input:checked + .slider:before {
         display: none !important;
     }
 
-    .url{
+    .url {
         width: 70% !important;
     }
 
-    .download-button{
+    .download-button {
         margin-bottom: 0 !important;
+    }
+
+    .bmc-btn-container{
+        display: none;
     }
 }
