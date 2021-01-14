@@ -20,7 +20,8 @@ function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
-    } else {
+    }
+    else {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
     }
@@ -53,10 +54,6 @@ Btn.addEventListener('click', () => {
         } else if (url.value.length > 40) {
             downloadPlaylist(url);
         }
-        Toast.fire({
-            icon: 'success',
-            title: 'Your download will start shortly'
-        });
     }
 });
 
@@ -67,6 +64,10 @@ async function downloadPlaylist(query) {
 async function downloadMp3(query) {
     const res = await fetch(`${serverURL}/downloadmp3?url=${query}`);
     if (res.status === 200) {
+        Toast.fire({
+            icon: 'success',
+            title: 'Your download will start shortly'
+        });
         var a = document.createElement('a');
         a.href = `${serverURL}/downloadmp3?url=${query}`;
         a.setAttribute('download', '');
@@ -82,6 +83,10 @@ async function downloadMp3(query) {
 async function downloadMp4(query) {
     const res = await fetch(`${serverURL}/downloadmp4?url=${query}`);
     if (res.status === 200) {
+        Toast.fire({
+            icon: 'success',
+            title: 'Your download will start shortly'
+        });
         var a = document.createElement('a');
         a.href = `${serverURL}/downloadmp4?url=${query}`;
         a.setAttribute('download', '');
