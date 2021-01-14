@@ -44,10 +44,14 @@ Btn.addEventListener('click', () => {
             title: 'Please enter Youtube video url'
         });
     } else {
-        if (select.value === 'mp3') {
-            downloadMp3(url.value);
-        } else if (select.value === 'mp4') {
-            downloadMp4(url.value);
+        if (url.value.length < 40) {
+            if (select.value === 'mp3') {
+                downloadMp3(url.value);
+            } else if (select.value === 'mp4') {
+                downloadMp4(url.value);
+            }
+        } else if (url.value.length > 40) {
+            downloadPlaylist(url);
         }
         Toast.fire({
             icon: 'success',
@@ -55,6 +59,10 @@ Btn.addEventListener('click', () => {
         });
     }
 });
+
+async function downloadPlaylist(query) {
+    console.log('Playlist Env')
+}
 
 async function downloadMp3(query) {
     const res = await fetch(`${serverURL}/downloadmp3?url=${query}`);
