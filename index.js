@@ -6,8 +6,14 @@ const PORT = process.env.PORT;
 
 app.use(cors());
 
+app.use(express.static(__dirname));
+
 app.listen(PORT, () => {
-    console.log(`Go Force, Run Force!!! At port ${PORT}`);
+    console.log(`Application running at port ${PORT}`);
+});
+
+app.get('/', function (req, res) {
+    res.render('index.html');
 });
 
 app.get('/downloadmp3', async (req, res, next) => {
