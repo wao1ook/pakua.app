@@ -2,7 +2,7 @@ const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme
 let select = document.querySelector('.format');
 let Btn = document.getElementById('btn');
 let url = document.querySelector('.url');
-let serverURL = 'http://localhost';
+let serverURL = 'https://pakua-app.herokuapp.com';
 
 const toggleSwitch = document.querySelector(".theme-selector");
 
