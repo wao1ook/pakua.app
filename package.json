@@ -1,13 +1,13 @@
 {
-  "name": "server",
+  "name": "pakua-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Youtube Video Downloader",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "https://github.com/JemCdo",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
